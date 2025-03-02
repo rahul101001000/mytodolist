@@ -99,7 +99,7 @@ sequenceDiagram
        A[app.js Module] --> B[API Functions]
        A --> C[Event Handlers]
        A --> D[UI Functions]
-       B --> B1[loadTodos()]
+       B --> B1[loadTodos]
        B --> B2[addTodo(text)]
        B --> B3[deleteTodo(id)]
        B --> B4[toggleTodo(id)]
@@ -115,21 +115,21 @@ sequenceDiagram
        participant User
        participant Form as todoForm
        participant Handler as submit handler
-       participant API as addTodo()
-       participant UI as renderTodos()
+       participant API as addTodo
+       participant UI as renderTodos
 
        User->>Form: Enter Text & Submit
-       Form->>Handler: e.preventDefault()
+       Form->>Handler: e.preventDefault
        Handler->>API: addTodo(text)
        API->>Handler: Response
-       Handler->>UI: loadTodos()
+       Handler->>UI: loadTodos
        UI->>User: Display Updated List
    ```
 
 3. **Async/Await Pattern**
    ```mermaid
    graph TD
-       A[API Call: loadTodos()] -->|async| B[fetch('/api/todos')]
+       A[API Call: loadTodos] -->|async| B[fetch('/api/todos')]
        B -->|await| C[Response]
        C -->|success| D[renderTodos(todos)]
        C -->|error| E[console.error]
@@ -140,13 +140,13 @@ sequenceDiagram
    graph TD
        subgraph Model[Model Layer]
            A[todos Array]
-           B1[loadTodos()]
-           B2[addTodo()]
-           B3[deleteTodo()]
-           B4[toggleTodo()]
+           B1[loadTodos]
+           B2[addTodo]
+           B3[deleteTodo]
+           B4[toggleTodo]
        end
        subgraph View[View Layer]
-           C[renderTodos()]
+           C[renderTodos]
            D[DOM Updates]
            D1[createElements]
            D2[updateClasses]
@@ -168,8 +168,8 @@ sequenceDiagram
    ```mermaid
    graph TD
        A[API Actions] -->|Trigger| B[State Change]
-       B -->|Notify| C[loadTodos()]
-       C -->|Update| D[renderTodos()]
+       B -->|Notify| C[loadTodos]
+       C -->|Update| D[renderTodos]
        style A fill:#f9f,stroke:#333,stroke-width:2px
        style B fill:#bbf,stroke:#333,stroke-width:2px
        style C fill:#bfb,stroke:#333,stroke-width:2px
@@ -180,10 +180,10 @@ sequenceDiagram
    ```mermaid
    graph TD
        subgraph Simple API Interface
-           A1[addTodo()]
-           A2[deleteTodo()]
-           A3[toggleTodo()]
-           A4[loadTodos()]
+           A1[addTodo]
+           A2[deleteTodo]
+           A3[toggleTodo]
+           A4[loadTodos]
        end
        subgraph Complex Operations
            B[fetch API]
@@ -201,7 +201,7 @@ sequenceDiagram
        subgraph Presentation Layer
            A[index.html]
            B[style.css]
-           C[renderTodos()]
+           C[renderTodos]
        end
        subgraph Business Logic
            D[form.addEventListener]
@@ -247,7 +247,7 @@ sequenceDiagram
    }
 
    function attachTodoHandlers(todoElement, todo) {
-       todoElement.onclick = () => toggleTodo(todo.id);
+       todoElement.onclick =  => toggleTodo(todo.id);
    }
 
    function renderTodo(todo) {
@@ -266,7 +266,7 @@ sequenceDiagram
            if (!response.ok) {
                throw new Error(`HTTP error! status: ${response.status}`);
            }
-           return await response.json();
+           return await response.json;
        } catch (error) {
            handleAPIError(error);
            throw error; // Allow caller to handle if needed
@@ -274,7 +274,7 @@ sequenceDiagram
    }
 
    // Usage in API calls
-   async function getTodos() {
+   async function getTodos {
        return makeAPICall(`${API_URL}/todos`);
    }
    ```
@@ -290,7 +290,7 @@ sequenceDiagram
    <!-- Enhanced with JavaScript -->
    <script>
    todoForm.addEventListener('submit', async (e) => {
-       e.preventDefault();
+       e.preventDefault;
        // Enhanced functionality
    });
    </script>
