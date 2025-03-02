@@ -100,13 +100,13 @@ sequenceDiagram
        A --> C[Event Handlers]
        A --> D[UI Functions]
        B --> B1[loadTodos]
-       B --> B2[addTodo(text)]
-       B --> B3[deleteTodo(id)]
-       B --> B4[toggleTodo(id)]
+       B --> B2[addTodo_text]
+       B --> B3[deleteTodo_id]
+       B --> B4[toggleTodo_id]
        C --> C1[todoForm.addEventListener]
        C --> C2[deleteButton.onclick]
        C --> C3[textSpan.onclick]
-       D --> D1[renderTodos(todos)]
+       D --> D1[renderTodos_todos]
    ```
 
 2. **Event-Driven Architecture**
@@ -120,7 +120,7 @@ sequenceDiagram
 
        User->>Form: Enter Text & Submit
        Form->>Handler: e.preventDefault
-       Handler->>API: addTodo(text)
+       Handler->>API: addTodo_text
        API->>Handler: Response
        Handler->>UI: loadTodos
        UI->>User: Display Updated List
@@ -131,7 +131,7 @@ sequenceDiagram
    graph TD
        A[API Call: loadTodos] -->|async| B[fetch('/api/todos')]
        B -->|await| C[Response]
-       C -->|success| D[renderTodos(todos)]
+       C -->|success| D[renderTodos_todos]
        C -->|error| E[console.error]
    ```
 
