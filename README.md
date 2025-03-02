@@ -18,9 +18,9 @@ A simple, yet well-structured todo list application built with Node.js/Express b
 - `Dockerfile` - Docker container configuration
 
 ### Documentation
-- [APP.md](APP.md) - Detailed application architecture and design patterns
-- [DOCKER.md](DOCKER.md) - Docker setup and best practices
-- [TESTING.md](TESTING.md) - Testing strategy and examples
+- [APP.md](docs/APP.md) - Detailed application architecture and design patterns
+- [DOCKER.md](docs/DOCKER.md) - Docker setup and best practices
+- [TESTING.md](docs/TESTING.md) - Testing strategy and examples
 
 ### Testing
 - `server.test.js` - API endpoint tests using Jest and Supertest
@@ -69,17 +69,17 @@ docker run -p 3000:3000 mytodolist
 
 ## Documentation Highlights
 
-1. **Application Architecture** ([APP.md](APP.md))
+1. **Application Architecture** ([APP.md](docs/APP.md))
    - Component hierarchy
    - Design patterns
    - Code organization
 
-2. **Docker Setup** ([DOCKER.md](DOCKER.md))
+2. **Docker Setup** ([DOCKER.md](docs/DOCKER.md))
    - Container architecture
    - Best practices
    - Development workflow
 
-3. **Testing Strategy** ([TESTING.md](TESTING.md))
+3. **Testing Strategy** ([TESTING.md](docs/TESTING.md))
    - Test architecture
    - Example tests
    - Best practices
@@ -99,6 +99,6 @@ docker run -p 3000:3000 mytodolist
 
 ## Further Reading
 
-- Detailed design patterns in [APP.md](APP.md)
-- Docker configuration in [DOCKER.md](DOCKER.md)
-- Testing examples in [TESTING.md](TESTING.md)
+- Detailed design patterns in [APP.md](docs/APP.md)
+- Docker configuration in [DOCKER.md](docs/DOCKER.md)
+- Testing examples in [TESTING.md](docs/TESTING.md)
