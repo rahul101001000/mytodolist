@@ -129,10 +129,10 @@ sequenceDiagram
 3. **Async/Await Pattern**
    ```mermaid
    graph TD
-       A[API Call: loadTodos] -->|async| B[fetch('/api/todos')]
-       B -->|await| C[Response]
-       C -->|success| D[renderTodos_todos]
-       C -->|error| E[console.error]
+    A[API Call: loadTodos] -->|async| B[fetch_api_todos]
+    B -->|await| C[Response]
+    C -->|success| D[renderTodos_todos]
+    C -->|error| E[console.error]
    ```
 
 4. **MVC-like Structure**
@@ -198,23 +198,23 @@ sequenceDiagram
 7. **Separation of Concerns**
    ```mermaid
    graph TB
-       subgraph Presentation Layer
-           A[index.html]
-           B[style.css]
-           C[renderTodos]
-       end
-       subgraph Business Logic
-           D[form.addEventListener]
-           E[addTodo/deleteTodo/toggleTodo]
-           F[todos Array Management]
-       end
-       subgraph Data Layer
-           G[fetch API Calls]
-           H[try/catch Blocks]
-           I[Response Handling]
-       end
-       Presentation Layer --> Business Logic
-       Business Logic --> Data Layer
+    subgraph PresentationLayer
+        A[index.html]
+        B[style.css]
+        C[renderTodos]
+    end
+    subgraph BusinessLogic
+        D[form.addEventListener]
+        E[addTodo_deleteTodo_toggleTodo]
+        F[todos Array Management]
+    end
+    subgraph DataLayer
+        G[fetch API Calls]
+        H[try_catch Blocks]
+        I[Response Handling]
+    end
+    PresentationLayer --> BusinessLogic
+    BusinessLogic --> DataLayer
    ```
 
 ### Design Principles Deep Dive
