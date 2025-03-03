@@ -66,15 +66,20 @@ function renderTodos(todos) {
         const li = document.createElement('li');
         li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
         
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = todo.completed;
+        checkbox.onclick = () => toggleTodo(todo.id);
+        
         const textSpan = document.createElement('span');
         textSpan.textContent = todo.text;
-        textSpan.onclick = () => toggleTodo(todo.id);
         
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.className = 'delete-btn';
         deleteButton.onclick = () => deleteTodo(todo.id);
         
+        li.appendChild(checkbox);
         li.appendChild(textSpan);
         li.appendChild(deleteButton);
         todoList.appendChild(li);
